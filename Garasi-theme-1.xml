@@ -173,12 +173,19 @@ body {
   }
 }
 
+/* ==============================================
+   HAPUS TOMBOL & TULISAN BLOGGER
+   ============================================== */
+.status-msg,
+.blogger-footer,
+a[href*='?m=1'],
+.mobile-link {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
   ]]></b:skin>
-  <b:defaultMarkup>
-    <b:markup type='mobile'>
-      <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-    </b:markup>
-  </b:defaultMarkup>
 </head>
 <body>
 
