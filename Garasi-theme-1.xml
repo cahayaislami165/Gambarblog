@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <b:skin><![CDATA[
+/* ==============================================
+   CSS GARASI KODE - TAMPILAN WEBSITE
+   Design by: Mang Ndin 
+   ============================================== */
+
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* === HEADER / ATAS === */
+#header {
+  background: #016361;
+  color: #fff;
+  padding: 1rem;
+}
+
+#header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#header h1 {
+  font-size: 1.8rem;
+}
+
+#header p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* === MENU NAVIGASI === */
+#navbar {
+  background: #024e4c;
+  padding: 0.7rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#navbar a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* === AREA KONTEN UTAMA === */
+#main-content {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* === BOX POSTINGAN === */
+.post-card {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card h2 {
+  color: #016361;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+/* === SIDEBAR / KOLOM KANAN === */
+#sidebar {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+#sidebar h3 {
+  background: #016361;
+  color: #fff;
+  padding: 10px;
+  margin: -25px -25px 20px -25px;
+  text-align: center;
+}
+
+/* === FOOTER / BAWAH === */
+#footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+/* ==============================================
+   RESPONSIVE - UNTUK HP & TABLET
+   ============================================== */
+@media(max-width: 768px){
+  
+  /* Ubah jadi 1 kolom */
+  #main-content {
+    grid-template-columns: 100%;
+  }
+
+  /* Header jadi tengah */
+  #header .header-content {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  #header h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Menu jadi lebih kecil dan rapi */
+  #navbar ul {
+    gap: 5px;
+  }
+  
+  #navbar a {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+  
+  /* Ukuran kotak postingan */
+  .post-card {
+    padding: 18px;
+  }
+}
+  ]]></b:skin>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-content">
+      <div class="logo">
+        <h1>Garasi Kode</h1>
+        <p>Tempat belajar ngulik kode &amp; template</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU NAVIGASI -->
+  <nav id="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="/p/tentang.html">Tentang</a></li>
+        <li><a href="/p/kontak.html">Kontak</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <div class="container">
+    <div id="main-content">
+      
+      <!-- ARTIKEL -->
+      <div id="posts">
+        <b:section class='main' id='main' showaddelement='yes'>
+          <b:widget id='Blog1' locked='true' title='Postingan' type='Blog'>
+            <b:includable id='main'>
+              <b:loop values='data:posts' var='post'>
+                <div class="post-card">
+                  <h2><a expr:href='data:post.url'><data:post.title/></a></h2>
+                  <p><data:post.snippet/></p>
+                  <a expr:href='data:post.url' style="display:inline-block; margin-top:15px; background:#016361; color:white; padding:8px 15px; text-decoration:none; border-radius:4px;">Baca Selengkapnya</a>
+                </div>
+              </b:loop>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside id="sidebar">
+        <h3>Widget Area</h3>
+        <b:section class='sidebar' id='sidebar' showaddelement='yes'/>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <p>Copyright &amp;copy; 2025 Garasi Kode. Dibuat dengan penuh semangat!</p>
+  </footer>
+
+</body>
+</html>
