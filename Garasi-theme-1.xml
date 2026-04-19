@@ -7,7 +7,6 @@
   <b:skin><![CDATA[
 /* ==============================================
    CSS GARASI KODE - TAMPILAN WEBSITE
-   Design by: Mang Ndin 
    ============================================== */
 
 /* Reset Dasar */
@@ -117,7 +116,6 @@ body {
   background: #fff;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   height: fit-content;
 }
 
@@ -174,7 +172,13 @@ body {
     padding: 18px;
   }
 }
+
   ]]></b:skin>
+  <b:defaultMarkup>
+    <b:markup type='mobile'>
+      <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    </b:markup>
+  </b:defaultMarkup>
 </head>
 <body>
 
